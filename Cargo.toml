@@ -1,0 +1,15 @@
+[package]
+name = "graphviz-sys"
+edition = "2021"
+version = "0.1.0"
+publish = false
+license = "EPL-2.0"
+description = "Vendored Graphviz C library compiled via cc, exposing DOT-to-SVG rendering"
+repository = "https://github.com/fabro-sh/graphviz-sys"
+links = "graphviz"
+
+[lib]
+doctest = false
+
+[build-dependencies]
+cc = "1"
