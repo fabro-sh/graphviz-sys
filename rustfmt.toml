@@ -1,0 +1,12 @@
+max_width = 100
+comment_width = 80
+
+group_imports = "StdExternalCrate"
+imports_granularity = "Module"
+
+use_field_init_shorthand = true
+merge_derives = true
+overflow_delimited_expr = true
+
+struct_field_align_threshold = 20
+enum_discrim_align_threshold = 20

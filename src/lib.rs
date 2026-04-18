@@ -22,7 +22,7 @@ extern "C" {
 // Manual FFI declarations (no bindgen needed -- we only use 8 functions)
 extern "C" {
     fn gvContextPlugins(builtins: *const LtSymlist, demand_loading: c_int)
-    -> *mut std::ffi::c_void;
+        -> *mut std::ffi::c_void;
     fn agmemread(cp: *const c_char) -> *mut std::ffi::c_void;
     fn gvLayout(
         gvc: *mut std::ffi::c_void,
@@ -129,7 +129,7 @@ mod tests {
     fn concurrent_renders_are_safe() {
         let handles: Vec<_> = (0..8)
             .map(|i| {
-                #[expect(clippy::disallowed_methods, reason = "Intentional OS threads to verify Mutex-based thread safety of vendored Graphviz FFI")]
+                #[allow(clippy::disallowed_methods)]
                 std::thread::spawn(move || {
                     let source = format!("digraph {{ node{i} -> node{} }}", i + 1);
                     render_dot_to_svg(&source).unwrap()

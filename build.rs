@@ -204,10 +204,7 @@ fn main() {
         ar_script.push_str("SAVE\nEND\n");
 
         let ar_cmd = std::env::var("AR").unwrap_or_else(|_| "ar".to_string());
-        #[expect(
-            clippy::disallowed_methods,
-            reason = "build.rs is synchronous; ar must run at compile time"
-        )]
+        #[allow(clippy::disallowed_methods)]
         let mut child = std::process::Command::new(&ar_cmd)
             .arg("-M")
             .stdin(std::process::Stdio::piped())
