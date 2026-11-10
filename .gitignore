@@ -1,1 +1,4 @@
 /target
+
+# AI-generated artifacts stay local.
+/.ai/
